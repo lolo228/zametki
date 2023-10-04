@@ -3,25 +3,31 @@ from DataWork import DataStore
 
 
 class Ui:
+
     def __init__(self, page: ft.Page):
+
+        # Создаём экземпляр класса, для работы с базой данных
         self.data_store = DataStore()
 
         all_notes = self.data_store.get_table_data()
 
+        # Создаём список с контейнерами/заметками
         notes_list = []
-
+ 
         if all_notes != []:
             for note in all_notes:
                 contain = self.create_note_container(note[0], note[1])
 
                 notes_list.append(contain)
 
-        self.page = page
+        # Инициализируем страницу | список заметок | Поле для поиска
+        self.page = page 
 
         self.notes_space = ft.Row(notes_list, wrap=True)
 
         self.search_field = ft.TextField(label='Поиск', expand=True)
 
+        # Добавляем в страницу все элементы
         self.page.add(
             ft.Column([
                 ft.Row([
@@ -36,6 +42,8 @@ class Ui:
         )
 
     def create_note_container(self, header, body):
+        # Функция для создания контейнеров/div`ов
+
         return ft.Container(
                     theme=ft.Theme(color_scheme_seed=ft.colors.INDIGO),
                     theme_mode=ft.ThemeMode.DARK,
@@ -61,8 +69,11 @@ class Ui:
                 )
     
     def delete_note(self, e, note_header):
+        # Функция для удаления заметок
+
         self.data_store.remove_note(note_header)
 
+        # Ищем нужный контейнер для удаления
         for contain in self.notes_space.controls:
             if contain.data == note_header:
                 self.notes_space.controls.remove(contain)
@@ -70,12 +81,15 @@ class Ui:
         self.page.update()
 
     def notes_search(self, e):
+        # Функция для поиска заметок
+
         keywoard = self.search_field.value
         
         found_notes = self.data_store.search_note(keywoard)
 
         self.notes_space.controls.clear()
 
+        # Создаём список с найденными заметками
         for notes in found_notes:
             contain = self.create_note_container(notes[0], notes[1])
 
@@ -84,6 +98,8 @@ class Ui:
         self.page.update()
 
     def alert_banner(self):
+        # Функция для создания и обработки действий баннера
+
         def close_banner(e):
             self.page.banner.open = False,
             self.page.update()
@@ -97,11 +113,15 @@ class Ui:
             ]
         )
 
+        # Открываем баннер
         self.page.banner = banner
         self.page.banner.open = True
         self.page.update()
 
     def add_note_button_handler(self, e):
+        # Обработка кнопки добавления новых заметок
+
+        # Обработка кнопки создания заметки
         def create_button_handler(e):
             note_header = header_field.value
             note_body = body_field.value
@@ -122,12 +142,12 @@ class Ui:
                 dialog.open = False
                 self.page.update()
 
-        header_field = ft.TextField(label="Заголовок записки")
-        body_field = ft.TextField(label="Текст записки")
+        header_field = ft.TextField(label="Заголовок заметки")
+        body_field = ft.TextField(label="Текст заметки")
 
         dialog = ft.AlertDialog(
             modal=True,
-            title=ft.Text("Добавление записки"),
+            title=ft.Text("Добавление заметки"),
             content=ft.Column([
                 header_field,
                 body_field,
@@ -144,4 +164,5 @@ def main(page: ft.Page):
     app = Ui(page)
 
 
-ft.app(target=main)
+if __name__ == '__main__':
+    ft.app(target=main)
