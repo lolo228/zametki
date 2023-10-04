@@ -1,13 +1,13 @@
 # UI:
-![Ui1](https://github.com/lolo228/zametki/assets/55115912/6d0997f7-84b8-424c-9501-71c10eedfd50)
+![Ui1](https://github.com/lolo228/zametki/assets/55115912/2e1b4616-c712-4bb4-9c4b-bc992c10b666)
 
-![Ui2](https://github.com/lolo228/zametki/assets/55115912/b7077cd0-ca57-4378-9137-d8752dd3a7d0)
+![Ui2](https://github.com/lolo228/zametki/assets/55115912/1e4a7967-1cfb-4287-b1d3-3400ea2e4067)
 
-![Ui3](https://github.com/lolo228/zametki/assets/55115912/f3c2f78f-7bff-4aeb-8773-a87e712c4281)
+![Ui3](https://github.com/lolo228/zametki/assets/55115912/b1407252-2e4f-4c7f-a0d3-5df09497f599)
 
-![Ui4](https://github.com/lolo228/zametki/assets/55115912/77113f10-f821-431f-9fbf-6578adaf04d5)
+![Ui4](https://github.com/lolo228/zametki/assets/55115912/deb75286-5f5d-4580-b23f-408df846a804)
 
-![Ui5](https://github.com/lolo228/zametki/assets/55115912/b5b82a37-3ebf-4a14-8909-86f2e5fa9c00)
+![Ui5](https://github.com/lolo228/zametki/assets/55115912/389aec51-67c3-4846-9a37-17dfbf9dac32)
 
 # Run project:
 1. Download the contents of the Release folder and put it in a separate directory
