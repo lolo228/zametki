@@ -13,4 +13,5 @@
 1. Download the contents of the Release folder and put it in a separate directory
 2. Install python preferably version 3.10
 3. After installing python, write the `cd path\to\folder\with\files`
-4. `python ui.py`
+4. Install the library with the command `pip install flet`
+5. `python ui.py`
